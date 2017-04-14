@@ -2,7 +2,7 @@ import React from 'react';
 import {Helmet} from "react-helmet";
 import LocaleProvider from 'antd/lib/locale-provider';
 import enUS from 'antd/lib/locale-provider/en_US';
-
+import Header from './common/Header';
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +17,7 @@ class App extends React.Component {
             <meta charSet="utf-8" />
             <title>Home</title>
           </Helmet>
+          <Header/>
           {children}
       </div>
     );
