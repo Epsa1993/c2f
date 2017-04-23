@@ -1,3 +1,5 @@
+import React from 'react';
+
 class addCourse extends React.Component {
   render() {
     return(
