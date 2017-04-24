@@ -11,7 +11,7 @@ export default (
      <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="login" component={Login}/>
-      <Route path="course" name="course_listing" component={coursePage}/>
+      <Route path="course" component={coursePage}/>
       <Route path="about" component={aboutPage}/>
    </Route>
 
