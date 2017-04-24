@@ -18,14 +18,14 @@ class coursePage extends React.Component {
       }
 
       onClick() {
-        alert('saving ${this.state.course.title}');
+        alert('saving '+ this.state.course.title);
       }
 
   render() {
     return(
       <div>
       <h1> courses </h1>
-      <input 
+      <input
         type="text"
         onChange={this.onTitleChange}
         value={this.state.course.title}
