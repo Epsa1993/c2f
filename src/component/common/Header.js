@@ -15,6 +15,7 @@ class Header extends React.Component {
             <li><Link to="/" activeStyle={{ color: 'red' }}>home</Link></li>
             <li><Link to="course"  activeStyle={{ color: 'red' }}>course</Link></li>
             <li><Link to="/about" activeStyle={{ color: 'red' }}>about</Link></li>
+            <li><Link to="/manageCourse" activeStyle={{ color: 'red' }}>course</Link></li>
           </ul>
         </div>
       </nav>
