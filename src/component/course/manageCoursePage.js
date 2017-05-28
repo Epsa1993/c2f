@@ -2,6 +2,7 @@ import React, {propTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import * as CourseAction from '../../action/courseActions';
+import * as AuthorAction from '../../action/authorActions';
 import CourseForm from './courseForm';
 
 class manageCoursePage extends React.Component {
@@ -21,8 +22,7 @@ class manageCoursePage extends React.Component {
 				<CourseForm 
 					course={this.state.course}
 					error={this.state.error}
-					allAuthor={[]}
-
+					allAuthor={this.props.authors}
 				/>
 			</div>
 			);
@@ -30,14 +30,23 @@ class manageCoursePage extends React.Component {
 }
 
 manageCoursePage.propType= {
-	course: propTypes.object.isRequired
+	course: propTypes.object.isRequired,
+	authors: propTypes.array.isRequired
 }
 
 function mapStateToProps(state, ownprops) {
 	let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
+
+	const authorFormattedForDropdown = state.authors.map(author => {
+		return {
+			value: author.id,
+			text: author.firstName + ' ' + author.lastName
+		};
+	});
 	return {
 		// state: state
-		course: course
+		course: course,
+		authore: authorFormattedForDropdown
 	}
 }
 function mapDispatchToProps(dispatch) {
