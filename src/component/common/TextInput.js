@@ -1,11 +1,10 @@
-import React,{propTypes} from 'react';
+import React,{PropTypes} from 'react';
 
-const TextInput ={(name, label, onChange, placeholder, value, error)} => {
+const TextInput =({name, label, onChange, placeholder, value, error}) => {
 	let WrapperClass = 'form-group';
 	if(error && error.length> 0) {
 		WrapperClass += "" + 'has-error';
 	}
-
 	return(
 		<div className={WrapperClass}>
 			<label htmlFor={name}>{label}</label>
@@ -24,12 +23,11 @@ const TextInput ={(name, label, onChange, placeholder, value, error)} => {
 };
 
 TextInput.propTypes = {
-	name: propTypes.string.isRequired,
-	label: propTypes.string.isRequired,
-	onChange: propTypes.func.isRequired,
-	placeholder: propTypes.string,
-	value: propTypes.string,
-	error: propTypes.string,
-}
-
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  error: PropTypes.string
+};
 export default TextInput;

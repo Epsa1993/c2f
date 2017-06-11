@@ -3,7 +3,7 @@ import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
 
 // class courseFrom extends React.Components {
-	const CourseForm = {(course, allAuthor, onSave, onChange, loading, error)} => {
+	const CourseForm = ({course, allAuthor, onSave, onChange, loading, error}) => {
 		return (
 			<form>
 			<h1>Manage Course </h1>
@@ -41,25 +41,17 @@ import SelectInput from '../common/SelectInput';
 			error={error.length}
 			/>
 
-			<input
-			type=submit
-			disabled={loading}
-			value={loading ? 'saving...' : 'save'}
-			className=""
-			onclick={onSave}
-			/>
 			</form>
 		);
 	}
 
-courseForm.propTypes = {
-	course: React.propTypes.object.isRequired,
-	allAuthor: React.propTypes.array,
-	onSave: React.propTypes.object.isRequired,
-	onChange: React.propTypes.object.isRequired,
-	loading: React.propTypes.bool,
-	error: React.propTypes.object,
+CourseForm.propTypes = {
+	course: React.PropTypes.object.isRequired,
+	allAuthor: React.PropTypes.array,
+	onSave: React.PropTypes.object.isRequired,
+	onChange: React.PropTypes.object.isRequired,
+	loading: React.PropTypes.bool,
+	error: React.PropTypes.object
 };
 
 export default CourseForm;
-			

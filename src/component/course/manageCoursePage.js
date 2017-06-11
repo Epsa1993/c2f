@@ -1,8 +1,8 @@
-import React, {propTypes} from 'react';
+import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import * as CourseAction from '../../action/courseActions';
-import * as AuthorAction from '../../action/authorActions';
+import * as AuthorAction from '../../action/authorAction';
 import CourseForm from './courseForm';
 
 class manageCoursePage extends React.Component {
@@ -19,7 +19,7 @@ class manageCoursePage extends React.Component {
 			return (
 			<div>
 				<h1> Manage Course Page </h1>
-				<CourseForm 
+				<CourseForm
 					course={this.state.course}
 					error={this.state.error}
 					allAuthor={this.props.authors}
@@ -30,8 +30,8 @@ class manageCoursePage extends React.Component {
 }
 
 manageCoursePage.propType= {
-	course: propTypes.object.isRequired,
-	authors: propTypes.array.isRequired
+	course: PropTypes.object.isRequired,
+	authors: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state, ownprops) {
